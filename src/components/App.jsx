@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { FeedbackOptions } from "./feedback-options/FeedbackOptions";
 import { FeddbackSection } from "./feedback-section/Section";
+import { GlobalStyle } from "./GlobalStyle.styled";
 import { Statistics } from "./statistics/Statistics";
 
 // export const App = () => {
@@ -12,11 +13,13 @@ import { Statistics } from "./statistics/Statistics";
   }
   render(){
     const { good, neutral, bad} = this.state;
-    return(
-  <FeddbackSection title={"Please leave feedback"}>
-    <FeedbackOptions options={this.state} onLeaveFeedback={'no'}></FeedbackOptions>
-    <Statistics good={good} neutral={neutral} bad={bad} total={0} positivePercentage={0}></Statistics> 
-  </FeddbackSection>
+    return(<>
+    <GlobalStyle />
+    <FeddbackSection title={"Please leave feedback"}>
+      <FeedbackOptions options={this.state} onLeaveFeedback={'no'}></FeedbackOptions>
+      <Statistics good={good} neutral={neutral} bad={bad} total={0} positivePercentage={0}></Statistics> 
+    </FeddbackSection>
+  </>
     )
   };
 };
