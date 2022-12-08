@@ -5,6 +5,12 @@ import { GlobalStyle } from "./GlobalStyle.styled";
 import { Statistics } from "./statistics/Statistics";
 
 export class App extends Component{
+
+  constructor() {
+    super();
+    this.clickHandling = this.clickHandling.bind(this);
+  }
+
    state = {
     good: 0,
     neutral: 0,
@@ -16,7 +22,7 @@ export class App extends Component{
     return(<>
     <GlobalStyle />
     <FeddbackSection title={"Please leave feedback"}>
-      <FeedbackOptions options={this.state} onLeaveFeedback={this.clickHandling.bind(this)}></FeedbackOptions>
+      <FeedbackOptions options={this.state} onLeaveFeedback={this.clickHandling}></FeedbackOptions>
       <Statistics
         good={good}
         neutral={neutral}
