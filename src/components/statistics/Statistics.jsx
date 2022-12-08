@@ -1,5 +1,4 @@
 import { Notification } from "components/notification/Notification";
-import { Component } from "react";
 import { StatisticsItem } from "./Statistics.styled"
 
 export const Statistics = ({good, neutral, bad, total, positivePercentage}) => {
