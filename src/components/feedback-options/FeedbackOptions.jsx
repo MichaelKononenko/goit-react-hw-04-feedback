@@ -1,4 +1,3 @@
-import { createGlobalStyle } from "styled-components";
 import { OptionsWrapper } from "./FeedbackOptions.styled"
 
 export const FeedbackOptions = ({options, onLeaveFeedback}) => {
