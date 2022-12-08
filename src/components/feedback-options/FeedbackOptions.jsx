@@ -1,11 +1,12 @@
+import { createGlobalStyle } from "styled-components";
 import { OptionsWrapper } from "./FeedbackOptions.styled"
 
 export const FeedbackOptions = ({options, onLeaveFeedback}) => {
     const optionsArray = Object.keys(options);
-    console.log(optionsArray);
     return (
         <OptionsWrapper style={{marginBottom: "20px"}}>
-        {optionsArray.map(item => <button type="button" style={{ padding:"5px", fontSize:"20px", borderRadius:"10px"}}>{item}</button>)
+        {optionsArray.map(item => {
+            return(<button type="button" key={item} onClick={() => onLeaveFeedback(item)} style={{ padding:"5px", fontSize:"20px", borderRadius:"10px"}}>{item}</button>)})
         }
         </OptionsWrapper>
     )
