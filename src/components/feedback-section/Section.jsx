@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
  export const FeddbackSection = ({title, children}) => {
     return (
@@ -7,3 +7,8 @@
         <div>{children}</div>
     </section>)
 };
+
+FeddbackSection.propTypes = {
+    title:  PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+}
